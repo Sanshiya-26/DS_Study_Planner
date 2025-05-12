@@ -1,22 +1,58 @@
-<!-- Projects Section -->
-<section id="projects" class="section hidden">
-    <h2>My Projects</h2>
-    
-    <div class="project-card">
-        <h3>Data Science Study Planner</h3>
-        <p>A comprehensive study planner to manage and organize data science learning resources effectively.</p>
-        <a href="https://github.com/Sanshiya-26/DS_Study_Planner" target="_blank" class="demo-btn">View Repository</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanshiya Ramesh - Intro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .intro-avatar, .intro-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation-fill-mode: forwards;
+        }
+
+        .intro-avatar {
+            animation: fadeIn 0.8s 0.2s ease-out forwards;
+        }
+
+        .intro-text {
+            animation: fadeIn 0.8s 0.6s ease-out forwards;
+            text-align: center;
+            max-width: 700px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="/static/avatar.png" alt="Avatar" class="intro-avatar" width="120" height="120">
+
+    <div class="intro-text">
+        <h1>Hey there! I’m Sanshiya Ramesh</h1>
+        <p>I’m here to shake things up. Think of me as that friend who’s always up for a challenge — the one who turns big ideas into bold realities. I’m a junior data scientist with skills for uncovering patterns, extracting valuable insights, and solving problems creatively — running on data, dreams, and way too much coffee. ☕️</p>
+        <p>I believe in the magic of fresh perspectives, the power of a well-timed joke 😉, and the kind of work that not only gets noticed but genuinely makes a difference. So, if you’re looking for someone who’s equal parts driven, friendly, and just the right amount of quirky — you’re in the right place. Let’s connect and make something amazing happen! 🙌🏻</p>
     </div>
 
-    <div class="project-card">
-        <h3>Machine Learning Model</h3>
-        <p>Predictive model for data classification using Scikit-Learn.</p>
-        <a href="#" class="demo-btn">Coming Soon</a>
-    </div>
-
-    <div class="project-card">
-        <h3>Interactive Web App</h3>
-        <p>An interactive web application built with Flask and JavaScript.</p>
-        <a href="#" class="demo-btn">Coming Soon</a>
-    </div>
-</section>
+</body>
+</html>
