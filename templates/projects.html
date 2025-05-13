@@ -1,21 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Projects - Creative Portfolio</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <title>Projects</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .swiper {
+      width: 90%;
+      max-width: 1000px;
+      height: 400px;
+      margin: auto;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .swiper-slide {
+      background: #fff;
+      padding: 30px;
+      overflow-y: auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-slide h3 {
+      margin-bottom: 10px;
+    }
+
+    .swiper-slide a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .swiper-slide a:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>My Projects</h1>
-        <div class="project-card">
-            <h2>Data Analysis Project</h2>
-            <p>Data exploration and visualization using Python.</p>
-        </div>
-        <div class="project-card">
-            <h2>Machine Learning Model</h2>
-            <p>Predictive models built with Python.</p>
-        </div>
-        <a href="/">Back to Home</a>
+
+<h1>My Projects</h1>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <h3>Flask Study Planner</h3>
+      <p>A productivity tool built with Flask to help students organize study schedules, featuring input forms and a custom logic backend.</p>
+      <a href="/study-planner">Open Flask App</a>
     </div>
+
+    <div class="swiper-slide">
+      <h3>ML Study Planner</h3>
+      <p>This project uses a trained ML model to personalize study routines based on user data. Built with Python and Streamlit.</p>
+      <a href="http://localhost:8501" target="_blank">Open Streamlit App</a>
+    </div>
+
+    <div class="swiper-slide">
+      <h3>Portfolio Website</h3>
+      <p>This responsive portfolio site built with Flask showcases my personal projects, skills, and contact details in a clean UI.</p>
+      <a href="/">Return Home</a>
+    </div>
+
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>

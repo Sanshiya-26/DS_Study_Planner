@@ -1,52 +1,54 @@
+/* === Global Styles === */
 body {
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, lemonchiffon, gold, lemonchiffon);
     font-family: 'Arial', sans-serif;
-    color: #333;
+    color: black;
     margin: 0;
     padding: 20px;
 }
 
+h1, h2, h3 {
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* === Container === */
 .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px lightgray;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .container:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.avatar-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.avatar-container {
-    flex-shrink: 0;
+    box-shadow: 0 12px 20px gray;
 }
 
 .avatar {
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: float 4s ease-in-out infinite;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
 }
 
 .avatar:hover {
-    transform: scale(1.05);
+  transform: scale(1.02);
 }
 
+/* === Intro Text === */
 .intro-text {
-    max-width: 600px;
+    max-width: 700px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .intro-text p {
@@ -54,33 +56,31 @@ body {
     line-height: 1.6;
 }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-    100% { transform: translateY(0); }
-}
-
+/* === Section Wrapper === */
 .section {
     margin-bottom: 30px;
 }
 
+/* === Projects / Cards === */
 .project-card {
-    background-color: #e0e0e0;
+    background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 3px 6px lightgray;
 }
 
 .project-card:hover {
     transform: scale(1.05);
-    background-color: #d0d0d0;
+    background-color: lightgray;
 }
 
+/* === Buttons === */
 .demo-btn {
     display: inline-block;
-    background-color: #007bff;
-    color: #fff;
+    background-color: dodgerblue;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -89,6 +89,43 @@ body {
 }
 
 .demo-btn:hover {
-    background-color: #0056b3;
+    background-color: royalblue;
     transform: translateY(-2px);
+}
+
+/* === Float Animation (optional) === */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+/* === Swiper Slide === */
+.swiper-slide {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px lightgray;
+    overflow-y: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === Scrollbar === */
+.swiper-slide::-webkit-scrollbar {
+    width: 8px;
+}
+
+.swiper-slide::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 4px;
+}
+
+img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
 }

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Scroll observer (optional animation)
     const sections = document.querySelectorAll(".section");
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -10,7 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, { threshold: 0.3 });
 
-    sections.forEach(section => {
-        observer.observe(section);
+    sections.forEach(section => observer.observe(section));
+
+    // Swiper init
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
     });
 });

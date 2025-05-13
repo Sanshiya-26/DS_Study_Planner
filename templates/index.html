@@ -1,58 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanshiya Ramesh - Intro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanshiya Ramesh - Portfolio</title>
 
-        .intro-avatar, .intro-text {
-            opacity: 0;
-            transform: translateY(30px);
-            animation-fill-mode: forwards;
-        }
+  <!-- Google Fonts & Swiper CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-        .intro-avatar {
-            animation: fadeIn 0.8s 0.2s ease-out forwards;
-        }
+  <!-- Custom Styling -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, lemonchiffon, gold, lemonchiffon);
+      color: black;
+      height: 100vh;
+    }
 
-        .intro-text {
-            animation: fadeIn 0.8s 0.6s ease-out forwards;
-            text-align: center;
-            max-width: 700px;
-            padding: 20px;
-            line-height: 1.6;
-        }
+    .swiper {
+      width: 100%;
+      height: 100vh;
+    }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(30px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      background-color: white;
+      overflow-y: auto;
+      box-shadow: 0 4px 10px lightgray;
+    }
 
-    </style>
+    .swiper-slide img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px gray;
+      transition: transform 0.3s;
+    }
+
+    .swiper-slide img:hover {
+      transform: scale(1.05);
+    }
+
+    .swiper-slide h1 {
+      font-size: 26px;
+      margin: 10px 0 20px;
+      font-weight: 700;
+    }
+
+    .swiper-slide p {
+      max-width: 700px;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: black;
+    }
+
+    .swiper-pagination-bullet {
+      background: gray;
+    }
+
+    .swiper-slide::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .swiper-slide::-webkit-scrollbar-thumb {
+      background-color: silver;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 <body>
 
-    <img src="/static/avatar.png" alt="Avatar" class="intro-avatar" width="120" height="120">
+  <!-- Swiper Container -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
 
-    <div class="intro-text">
+      <!-- Slide 1: Intro -->
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='avatar.png') }}" alt="Sanshiya Ramesh" class="hero-img">
         <h1>Hey there! I’m Sanshiya Ramesh</h1>
-        <p>I’m here to shake things up. Think of me as that friend who’s always up for a challenge — the one who turns big ideas into bold realities. I’m a junior data scientist with skills for uncovering patterns, extracting valuable insights, and solving problems creatively — running on data, dreams, and way too much coffee. ☕️</p>
-        <p>I believe in the magic of fresh perspectives, the power of a well-timed joke 😉, and the kind of work that not only gets noticed but genuinely makes a difference. So, if you’re looking for someone who’s equal parts driven, friendly, and just the right amount of quirky — you’re in the right place. Let’s connect and make something amazing happen! 🙌🏻</p>
+        <p>I’m here to shake things up. Think of me as that friend who’s always up for a challenge — the one who turns big ideas into bold realities.</p>
+        <p>I’m a junior data scientist with skills for uncovering patterns, extracting valuable insights, and solving problems creatively — running on data, dreams, and way too much coffee. ☕️</p>
+      </div>
+
+      <!-- Slide 2: Projects -->
+      <div class="swiper-slide">
+        <img src="{{ url_for('static', filename='avatar1.png') }}" alt="Project Avatar">
+        <h1>Welcome to the Personal Data Lab!</h1>
+        <p>Here’s where curiosity meets code, and ideas come to life. From data-driven study planners to interactive web apps, these projects are my playground for experimenting, learning, and creating impact.</p>
+        <p>Feel free to dive in and see what I've been up to. Thank you!</p>
+      </div>
+
     </div>
+
+    <!-- Swiper Pagination & Arrows -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const swiper = new Swiper('.swiper', {
+        direction: 'horizontal',
+        loop: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+          enabled: true,
+        },
+      });
+    });
+  </script>
 
 </body>
 </html>
